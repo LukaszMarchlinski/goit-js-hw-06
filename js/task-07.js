@@ -1,19 +1,6 @@
-const loginForm = document.querySelector(".login-form");
+const fontSizeControl = document.querySelector('#font-size-control');
+const text = document.querySelector('#text');
 
-function callSubmit(event) {
-  event.preventDefault();
-
-  const {
-    elements: { email, password },
-  } = event.currentTarget;
-
-  if (email.value === "" || password.value === "") {
-    return alert("Please fill in all fields");
-  }
-
-  const data = { email: email.value, password: password.value };
-  console.log(data);
-  event.currentTarget.reset();
-}
-
-loginForm.addEventListener("submit", callSubmit);
+fontSizeControl.addEventListener("input", (event) => {
+text.style.fontSize = event.currentTarget.value + "px";
+});
